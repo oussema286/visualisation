@@ -1,6 +1,7 @@
 // Fonction pour récupérer les données de l'API
+const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 function fetchData() {
-    fetch('https://www.freetogame.com/api/games')
+    fetch(proxyUrl + 'https://www.freetogame.com/api/games')
         .then(response => response.json())
         .then(data => {
             // Compter le nombre de jeux dans chaque genre

@@ -1,4 +1,5 @@
 // Fonction pour initialiser la carte
+const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 function initMap() {
     // Créer la carte centrée sur une position par défaut
     const map = L.map('map').setView([0, 0], 2);
@@ -9,7 +10,7 @@ function initMap() {
     }).addTo(map);
 
     // Appeler l'API pour obtenir les données des jeux
-    fetch('https://www.freetogame.com/api/games?platform=pc&fbclid=IwZXh0bgNhZW0CMTAAAR20Lkf0aBV6s1jSCZlc4C9rXSrn8GrL0VSHGovk_gzdxwR4woK31eiQUvs_aem_ATQJqM4UGqx9m9Q3FD2tRMCR1b7cdG_x_QzGMofCjSub255ejQLWN3uS-hmNBRMUgevowOZ2bLRgTTz3U2nkDcsw')
+    fetch(proxyUrl + 'https://www.freetogame.com/api/games')
         .then(response => response.json())
         .then(data => {
             // Créer un ensemble pour stocker les éditeurs uniques

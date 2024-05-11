@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
     const publisherSelect = document.getElementById('publisher-select');
     const chartContainer = document.getElementById('chart-container');
+    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
 
     // Function to fetch data from the API
     function fetchData() {
-        fetch('https://www.freetogame.com/api/games')
+        fetch(proxyUrl + 'https://www.freetogame.com/api/games')
             .then(response => response.json())
             .then(data => {
                 // Extract unique publishers
